@@ -47,7 +47,7 @@ while (userTotal < totalThreshold && dealerTotal < totalThreshold && numberOfTur
     DisplayRandomResponse(dealerIndex);
     Console.WriteLine();
 
-    int dealerNumber = random.Next(1, 11);
+    int dealerNumber = random.Next(1, 16);
 
     if (dealerTotal > 90)
     {
@@ -56,6 +56,10 @@ while (userTotal < totalThreshold && dealerTotal < totalThreshold && numberOfTur
     else if (dealerTotal >= 95 && dealerTotal < 99)
     {
         dealerNumber = random.Next(-6, 6);
+    }
+    else if (dealerTotal <= 50)
+    {
+        dealerNumber = 10;
     }
 
     userTotal += user1Number + user2Number;
@@ -172,7 +176,10 @@ int GenerateDealer(out string dealerName)
         { "Mrs. Mickey Tyson, Angel of Death and Hairspray", "Thith ith going to be eathy." },
         { "Krump", "I'm gonna win big, real big, as big as I can, I'll win so big like you've never seen, and I always win." },
         { "Not Three Chipmunks in a Trenchcoat", "*squeak* Ahem, excuse me, I'm running late." },
-        { "Catman", "There's darkness encroaching upon Markham, so you know what that means! Time to run around, open all the doors, and scratch everything!" }
+        { "Catman", "There's darkness encroaching upon Markham, so you know what that means! Time to run around, open all the doors, and scratch everything!" },
+        { "Milky Mouse", "Hahoo hahoo! Whippity whoodah!" },
+        { "The Jokester", "Why so serious, eh?" },
+        { "The IRS", "I'm gonna need a breakdown of your earnings after this game." }
         };
 
     int randomIndex = random.Next(dealerNamesAndEntrancePhrases.GetLength(0));
@@ -194,9 +201,12 @@ void DisplayRandomResponse(int dealerIndex)
         { "Are you trying to insinuate something about my skin color?", "Wow, that says a lot about how you feel about my people.", "You're making everyone of your people look bad." },
         { "Gbbrrbgg.", "RAGGGHHH.", "Hmmglph." },
         { "Thufferin' thuckatath.", "THINK, motherfucker, THINK!", "That'th wack." },
-        { "Thufferin' thuckatath.", "THINK, motherfucker, THINK!", "That'th wack." },
-        { "Thufferin' thuckatath.", "THINK, motherfucker, THINK!", "That'th wack." },
-        { "Thufferin' thuckatath.", "THINK, motherfucker, THINK!", "That'th wack." },
+        { "That play was so bad, it was worse than any play I've ever seen ever.", "You are unattractive both inside and out; I can see why you play this game.", "I'm gonna make them recount this at the end." },
+        { "*squeak* I mean uh, you're weak!", "Shoes? Oh size 13. Why yes, they are a little big, aren't they?", "Aw nuts." },
+        { "Prrrr, this seat is comfy.", "I really could use a quick nap after this...", "Will there be a fish snack bar after this?" },
+        { "I fuckin' hate playing these games.", "Humans are scum.", "You go to hell and you die." },
+        { "Not clown—Jokester.", "I used to think my life was a tragedy, but then I saw it was just a game of numbers,", "Your skills, your strategies, they're a joke." },
+        { "That move'll cost you a 47% increase on your I9 Section 14.", "Don't try to dodge taxes like you dodged that.", "Don't think you're better with numbers than us." }
     };
 
     int responseIndex = random.Next(0, 3);
